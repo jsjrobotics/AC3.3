@@ -55,12 +55,38 @@ Third Android Program
 - Build and display image in Imageview
 - Change image downloaded based on selection
 - Caching
+- Helpful links
+https://developer.android.com/training/basics/network-ops/managing.html
+https://developer.android.com/training/displaying-bitmaps/index.html
 ---------------------
 It should start an activity, with four square button, one in each corner of the
 screen. Each button will have a different name that corresponds to the image it
 downloads.
-- Cat - download a chosen cat image from the internet. Upload it to google
-drive. Make it
-When you
-press a button, the background should turn to the color as described by the
-button text.
+
+- Faceless man - http://www.gravatar.com/avatar/be3aebd4ab2d50888d1e26b307144012?d=mm&s=230
+- Flaming horse - http://www.gravatar.com/avatar/1c1ee0903c314d243796b0526c2bebe0?d=mm&s=230
+- OpenGL Code -
+http://www.familypicturewill.com/user_profile_uploads/1470345663111.jpg
+
+
+When you press a button, the background should change to display the image.
+
+-- Part 2 --
+After each background changes according to the button click, we need to think
+about network usage. Network usage is slow, and consumes a lot of battery. Hence
+we download the stuff we need once and cache these values for later use.
+
+At the start of the activity, download each of the image data, and save it
+somehow. Android provides a LRU cache object, but you could also just save
+bitmaps to a file. Saving them in memory by assigning them to an array or map
+is always more difficult, but is more rewarding as you can implement your own
+caching logic. If you chose to build your own cache, you will have to take into
+account the limited memory of an android device and the high byte count of
+images.
+
+By using the cache, at the start of your activity, we should see network usage
+spike, and the no matter how many buttons clicked, the network is not used
+again.
+https://developer.android.com/studio/profile/am-network.html
+
+No third party libraries can be used.
