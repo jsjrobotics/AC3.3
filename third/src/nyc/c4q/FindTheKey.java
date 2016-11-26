@@ -45,6 +45,9 @@ public class FindTheKey {
      * Substituting the # and * with the key and value in map
      */
     public void printAllKeys() {
-
+        List<String> keys = listOfKeys();
+        for (String s : keys){
+             System.out.println("Key: "+ s + "  Value: "+keyValues.get(s));
+        }
     }
 }
