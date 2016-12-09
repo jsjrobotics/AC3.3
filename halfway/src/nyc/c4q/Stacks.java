@@ -26,4 +26,19 @@ public class Stacks {
         }
         return count;
     }
+
+    public static Stack<String> buildStack(){
+        Stack<String> input = new Stack<>();
+        for (int index = 0; index < 10; index++) {
+            input.add("a");
+        }
+        for (int index = 0; index < 5; index++) {
+            input.add("b");
+        }
+        for (int index = 0; index < 0; index++) {
+            input.add("c");
+        }
+        return input;
+    }
+
 }
